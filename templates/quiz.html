@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Recommender Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>🎓 Career Recommender Quiz</h1>
+    <form method="POST" action="/predict">
+
+        <h2>1. Select your education level:</h2>
+        {% for edu in education_levels %}
+            <label>
+                <input type="radio" name="education" value="{{ edu }}" required> {{ edu }}
+            </label><br>
+        {% endfor %}
+
+        <h2>2. Select your skills:</h2>
+        {% for skill in skills %}
+            <label>
+                <input type="checkbox" name="skills" value="{{ skill }}"> {{ skill }}
+            </label><br>
+        {% endfor %}
+
+        <h2>3. Select your interests:</h2>
+        {% for interest in interests %}
+            <label>
+                <input type="checkbox" name="interests" value="{{ interest }}"> {{ interest }}
+            </label><br>
+        {% endfor %}
+
+        <br><button type="submit">🎯 Show My Career</button>
+    </form>
+</body>
+</html>

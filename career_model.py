@@ -53,3 +53,9 @@ with open('interests_encoder.pkl', 'wb') as f:
     pickle.dump(mlb_interests, f)
 
 print("✅ Model trained and saved!")
+
+# 🔍 Print unique career options
+careers = df['Recommended_Career'].unique()
+print(f"\n🎯 Total unique careers: {len(careers)}\n")
+for i, career in enumerate(careers, 1):
+    print(f"{i}. {career}")

@@ -4,13 +4,13 @@ import pickle
 import pandas as pd
 
 # Load model and encoders
-with open('career_model.pkl', 'rb') as f:
+with open('model/career_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
-with open('skills_encoder.pkl', 'rb') as f:
+with open('model/skills_encoder.pkl', 'rb') as f:
     skills_encoder = pickle.load(f)
 
-with open('interests_encoder.pkl', 'rb') as f:
+with open('model/interests_encoder.pkl', 'rb') as f:
     interests_encoder = pickle.load(f)
 
 # Function for numbered multi-select
